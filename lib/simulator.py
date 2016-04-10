@@ -31,7 +31,7 @@ i = 1
 while True:
     i+=1
     offscreenCanvas.Clear()
-    field.print()
+    field.draw()
     colorize(field.food, field.base, field.occupied)
     field.generate_next()
     if i % 10 == 0:

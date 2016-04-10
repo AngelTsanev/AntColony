@@ -17,7 +17,7 @@ class Field:
         self.occupied = []
 
     def __str__(self):
-        self.print()
+        self.draw()
 
     def generate_next(self):
         #must evaporate some pheromones at some point
@@ -35,7 +35,7 @@ class Field:
         y = self.base[1]
         self.canvas[x][y] = 'X'
 
-    def print(self):
+    def draw(self):
         for line in field.canvas:
             print(" ".join(line)) 
         print("")
@@ -54,27 +54,4 @@ class Field:
     def remove_occupied(self, spot):
         index = self.occupied.index(spot)
         self.occupied.pop(index)
-
-
-
-field = Field("field.txt", (30, 40))
-#green = Color(0, 204, 0)
-#food = Food(green, 10, 10)
-field.food.append((10, 10))
-field.food.append((20, 20))
-
-for i in range(1, 30):
-    field.units.append(Ant(Color(0, 0, 100), 30, 40, i))
-    field.add_occupied((30, 40))
-
-i = 1
-while True:
-    i+=1
-    field.print()
-    field.generate_next()
-    if i % 10 == 0:
-        i = 1
-        field.evaporate_pheromones()
-    time.sleep(0.4)
-
 
