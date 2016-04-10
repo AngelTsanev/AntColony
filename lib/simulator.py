@@ -8,14 +8,13 @@ import time
 
 Matrix = RGBMatrix(32, 2, 1)
 Matrix.pwmBits = 5
-Matrix.brightness = 50
+Matrix.brightness = 100
 
 def colorize(foods, base, ants):
     for food in foods:
         Matrix.SetPixel(food[0], food[1], 0, 200, 0)
-
     for ant in ants:
-        Matrix.SetPixel(ant[0], ant[1], 200, 0, 0)
+        Matrix.SetPixel(ant.coordinates[0], ant.coordinates[1], 200, 0, 0)
 	#base
     Matrix.SetPixel(base[0], base[1], 100, 255, 100)
 
@@ -37,7 +36,7 @@ while True:
     offscreenCanvas.Clear()
     field.draw()
     field.generate_next()
-    colorize(field.food, field.base, field.occupied)
+    colorize(field.food, field.base, field.units)
     if i % 10 == 0:
         i = 1
         field.evaporate_pheromones()
