@@ -1,5 +1,6 @@
 from rgbmatrix import RGBMatrix
 from rgbmatrix import graphics
+from field import Field
 
 
 Matrix = RGBMatrix(32, 2, 1)
