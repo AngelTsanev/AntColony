@@ -12,21 +12,21 @@ Matrix.brightness = 100
 
 def colorize(foods, base, ants):
     for food in foods:
-        Matrix.SetPixel(food[0], food[1], 0, 200, 0)
+        Matrix.SetPixel(food[1], food[0], 0, 200, 0)
     for ant in ants:
-        Matrix.SetPixel(ant.coordinates[0], ant.coordinates[1], 200, 0, 0)
+        Matrix.SetPixel(ant.coordinates[1], ant.coordinates[0], 200, 0, 0)
 	#base
-    Matrix.SetPixel(base[0], base[1], 100, 255, 100)
+    Matrix.SetPixel(base[1], base[0], 100, 255, 100)
 
 
-field = Field("field.txt", (30, 40))
+field = Field("field.txt", (40, 30))
 
 field.food.append((10, 10))
 field.food.append((20, 20))
 
 for i in range(1, 21):
-    field.units.append(Ant(Color(0, 0, 100), 30, 40, i))
-    field.add_occupied((30, 40))
+    field.units.append(Ant(Color(0, 0, 100), 40, 30, i))
+    field.add_occupied((40, 30))
 
 offscreenCanvas = Matrix.CreateFrameCanvas()
 
