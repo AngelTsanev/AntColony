@@ -25,9 +25,12 @@ for i in range(1, 30):
     field.units.append(Ant(Color(0, 0, 100), 30, 40, i))
     field.add_occupied((30, 40))
 
+offscreenCanvas = Matrix.CreateFrameCanvas()
+
 i = 1
 while True:
     i+=1
+    offscreenCanvas.Clear()
     field.print()
     colorize(field.food, field.base, field.occupied)
     field.generate_next()
@@ -35,4 +38,5 @@ while True:
         i = 1
         field.evaporate_pheromones()
     time.sleep(0.4)
+    offscreenCanvas = Matrix.SwapOnVSync(offscreenCanvas)
 
