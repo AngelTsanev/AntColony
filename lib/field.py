@@ -36,7 +36,7 @@ class Field:
         self.canvas[x][y] = 'X'
 
     def draw(self):
-        for line in field.canvas:
+        for line in self.canvas:
             print(" ".join(line)) 
         print("")
         print("")
