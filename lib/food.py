@@ -8,4 +8,9 @@ class Food:
     def eat(self):
         self.quanity -= 1
 
+    def __str__(self):
+        return '#'
+
+    def move(self, field, pheromones):
+        field[self.coordinates[0]][self.coordinates[1]] = "#"
 

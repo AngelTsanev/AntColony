@@ -13,4 +13,3 @@ class Color:
         if (arg == 'blue' or arg == 2):
             return self.blue
         raise IndexError
-
