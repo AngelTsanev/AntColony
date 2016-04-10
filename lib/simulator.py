@@ -3,6 +3,7 @@ from rgbmatrix import graphics
 from field import Field
 from color import Color
 from ant import Ant
+import time
 
 
 Matrix = RGBMatrix(32, 2, 1)
