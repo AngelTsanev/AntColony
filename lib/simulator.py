@@ -19,7 +19,7 @@ def colorize(foods, base, ants):
     Matrix.SetPixel(base[1], base[0], 100, 255, 100)
 
 
-field = Field("field.txt", (40, 30))
+field = Field("field.txt", (30, 40))
 
 field.food.append((10, 10))
 field.food.append((20, 20))
