@@ -25,8 +25,8 @@ field.food.append((10, 10))
 field.food.append((20, 20))
 
 for i in range(1, 21):
-    field.units.append(Ant(Color(0, 0, 100), 40, 30, i))
-    field.add_occupied((40, 30))
+    field.units.append(Ant(Color(0, 0, 100), 30, 40, i))
+    field.add_occupied((30, 40))
 
 offscreenCanvas = Matrix.CreateFrameCanvas()
 
