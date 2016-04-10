@@ -1,6 +1,8 @@
 from rgbmatrix import RGBMatrix
 from rgbmatrix import graphics
 from field import Field
+from color import Color
+from ant import Ant
 
 
 Matrix = RGBMatrix(32, 2, 1)
