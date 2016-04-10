@@ -25,7 +25,7 @@ field = Field("field.txt", (30, 40))
 field.food.append((10, 10))
 field.food.append((20, 20))
 
-for i in range(1, 11):
+for i in range(1, 21):
     field.units.append(Ant(Color(0, 0, 100), 30, 40, i))
     field.add_occupied((30, 40))
 
@@ -36,8 +36,8 @@ while True:
     i+=1
     offscreenCanvas.Clear()
     field.draw()
-    colorize(field.food, field.base, field.occupied)
     field.generate_next()
+    colorize(field.food, field.base, field.occupied)
     if i % 10 == 0:
         i = 1
         field.evaporate_pheromones()
